@@ -1,11 +1,11 @@
 ﻿// *****
 // Elementos constituintes basicos da ECL
 // Uma definicao
-//Mydef := 'Olá mundo';  // definicao do tipo "value"
+Mydef := 'Olá mundo';  // definicao do tipo "value"
 
 // Uma acao
- OUTPUT('Olá mundo');
-//OUTPUT(mydef);
+//  OUTPUT('Olá mundo');
+OUTPUT(mydef);
 
 // *****
 // Estruturas de dados basicas em ECL
@@ -126,27 +126,27 @@ joineds;
 */
 
 
-rec := RECORD
-    STRING firstname;
-	STRING lastname;
-	UNSIGNED age;
-END;
+// rec := RECORD
+//     STRING firstname;
+// 	STRING lastname;
+// 	UNSIGNED age;
+// END;
 
-ds := DATASET([{'Wendy','Frost',34},
-               {'Albert','John',34},
-			   {'Natan','Bun',45},
-			   {'Carl','Moore',56},
-			   {'Jimmy','John',66}]
-							 ,rec);
-OUTPUT(ds); // this OUTPUT exemplifies a dataflow parallelism to be shown via the graphs
+// ds := DATASET([{'Wendy','Frost',34},
+//                {'Albert','John',34},
+// 			   {'Natan','Bun',45},
+// 			   {'Carl','Moore',56},
+// 			   {'Jimmy','John',66}]
+// 							 ,rec);
+// OUTPUT(ds); // this OUTPUT exemplifies a dataflow parallelism to be shown via the graphs
 
-mysort1 := SORT(ds,firstname);  //this sort will be ignored by the compiler unless you explicitely asks for its OUTPUT as this sort does not affect the end result
+// mysort1 := SORT(ds,firstname);  //this sort will be ignored by the compiler unless you explicitely asks for its OUTPUT as this sort does not affect the end result
 																//(exemplifies a dataflow optimization to be shown via the graphs)
 //OUTPUT(mysort1); 
 
-mysort2 := SORT(mysort1,lastname); //this sort will actually only be done after the filter is applied since the compiler understands that only a subset of data needs to be sorted by then 
+// mysort2 := SORT(mysort1,lastname); //this sort will actually only be done after the filter is applied since the compiler understands that only a subset of data needs to be sorted by then 
                                    //(exemplifies another dataflow optimization to be shown via the graphs)
 
-myfilter := mysort2(age>50); 
-OUTPUT(myfilter);
+// myfilter := mysort2(age>50); 
+// OUTPUT(myfilter);
 
