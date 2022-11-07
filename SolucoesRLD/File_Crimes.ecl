@@ -1,5 +1,5 @@
 EXPORT File_Crimes := MODULE
-EXPORT Layout := RECORD
+EXPORT  Layout := RECORD
     STRING ID;
     STRING Case_Number;
     STRING Date;
@@ -23,5 +23,5 @@ EXPORT Layout := RECORD
     STRING Longitude;
     STRING Location;
 END;
-EXPORT File := DATASET('~class::rld::crimes_-_2001_to_present.csv', Layout, CSV(heading(1)));
+EXPORT File := DATASET('~.::crimes_-_2001_to_present.csv', Layout, CSV);
 END;

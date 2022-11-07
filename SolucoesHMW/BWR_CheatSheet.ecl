@@ -1,33 +1,33 @@
 ﻿// *****
 // Elementos constituintes basicos da ECL
 // Uma definicao
-Mydef := 'Olá mundo';  // definicao do tipo "value"
+// Mydef := 'Olá mundo';  // definicao do tipo "value"
 
 // Uma acao
 //  OUTPUT('Olá mundo');
-OUTPUT(mydef);
+// OUTPUT(mydef);
 
 // *****
 // Estruturas de dados basicas em ECL
 // Estrutura RECORD
 
-// rec := RECORD
-//   STRING10  Firstname;
-// 	STRING    Lastname;
-// 	STRING1   Gender;
-// 	UNSIGNED1 Age;
-// 	INTEGER   Balance;
-// 	DECIMAL7_2 Income;
-// END;
+rec := RECORD
+  STRING10  Firstname;
+	STRING    Lastname;
+	STRING1   Gender;
+	UNSIGNED1 Age;
+	INTEGER   Balance;
+	DECIMAL7_2 Income;
+END;
 
 // Declaracao DATASET
-// ds := DATASET([{'Alysson','Oliveira','M',26,100,1000.50},
-//                {'Bruno','Camargo','',22,-100,500.00},
-// 							 {'Elaine','Silva','F',19,-50,750.60},
-// 							 {'Julia','Caetano','F',45,500,5000},
-// 							 {'Odair','Ferreira','M',66,350,6000},
-// 							 {'Orlando','Silva','U',67,300,4000}],rec);
-// OUTPUT(ds);
+ds := DATASET([{'Alysson','Oliveira','M',26,100,1000.50},
+               {'Bruno','Camargo','',22,-100,500.00},
+							 {'Elaine','Silva','F',19,-50,750.60},
+							 {'Julia','Caetano','F',45,500,5000},
+							 {'Odair','Ferreira','M',66,350,6000},
+							 {'Orlando','Silva','U',67,300,4000}],rec);
+OUTPUT(ds);
 
 // *****
 // Filtragem e tabulaçao de datasets
