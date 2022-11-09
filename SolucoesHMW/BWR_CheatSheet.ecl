@@ -46,13 +46,13 @@ OUTPUT(ds);
 // recset;						// definição do tipo "recordset"
 // COUNT(recset);    //Equivale a: OUTPUT(COUNT(recset));
 
-// rec2 := RECORD
-//   ds.Gender;
-// 	cnt := COUNT(GROUP);
-// END;
+rec2 := RECORD
+  ds.Gender;
+	cnt := COUNT(GROUP);
+END;
 
-// crosstab := TABLE(ds,rec2,Gender);
-// crosstab;
+crosstab := TABLE(ds,rec2,Gender);
+crosstab;
 
 // avg := AVE(crosstab,cnt);
 // avg;
